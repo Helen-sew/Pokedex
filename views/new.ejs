@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+
+	<nav class="nav">
+		<a class="nav-link active" href="/"><button class=" btn btn-primary" type="submit">Home</button></a>
+		<a class="nav-link" href="/pokemons/"><button class=" btn btn-primary" type="submit">All Pokemons</button></a>
+	</nav>
+
+
+	<h1>Create New Pokemon</h1>
+  
+	      <div >
+		      <div>
+            <form action="/pokemons" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name"/>
+        <label for="image-url">Image</label>
+        <input type="text" name="img" id="img" />
+        <label for="text" name="miscAbilities" id="miscAbilities">Abilities</label>
+        <input type="text" name="misc.abilities.normal" id="misc.abilities.normal" />   
+        <label for="text" name="statshp" id="statshp">Stats hp</label>
+        <input type="text" name="stats.hp" id="stats.hp" />
+        <label for="text" name="statsAttack" id="statsAttack">Stats attack</label>
+        <input type="text" name="stats.attack" id="stats.attack" />
+        <label for="text" name="statsDefense" id="statsDefense">Stats defense</label>
+        <input type="text" name="stats.defense" id="stats.defense" />
+        <label for="text" name="statsSpattack" id="statsSpattack">Stats spattack</label>
+        <input type="text" name="stats.spattack" id="stats.spattack" />
+        <label for="text" name="statsSpdefense" id="statsSpdefense">Stats spdefense</label>
+        <input type="text" name="stats.spdefense" id="stats.spdefense" />
+        <label for="text" name="statsSpeed" id="statsSpeed">Stats speed</label>
+        <input type="text" name="stats.speed" id="stats.speed" />
+
+        <input type="submit" value="Create Pokemon">
+      </form>
+      </div>
+      </div>
+
+    
+</body>
+</html>

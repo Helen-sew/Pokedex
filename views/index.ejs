@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokemons!</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<link rel="stylesheet" href="/css/index.css">
+
+  </head>
+
+<body>
+
+	<nav class="nav">
+		<a class="nav-link active" href="/"><button class=" button is-link is-hovered" type="submit">Home</button></a>
+		<a class="nav-link" href="/pokemons/new"><button class=" button is-link is-hovered" type="submit">Create New Pokemon</button></a>
+	</nav>
+
+	<h1 class="heading">All The Pokemons</h1>
+
+
+<div class="container">
+	<% pokemon.forEach((poke, index) => { %>
+
+	
+		<div class="box "> 
+		<img src="<%= poke.img %>" alt="pokemons">
+		<h5><a href="/pokemons/<%= index %>"> <%= poke.name %></a> </h5>
+			
+			<form action="/pokemons/<%= index %>?_method=DELETE" method="POST">
+				<button class="button is-link is-hovered" type="submit">Delete</button>
+			</form>
+			<br>
+			<a href="/pokemons/<%= index %>/edit"><button class=" button is-link is-hovered" type="submit">Edit</button></a>
+			
+		
+			</div>
+
+
+	<%})%>
+
+
+</div>
+</body>
+
+</html>

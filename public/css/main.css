@@ -1,0 +1,11 @@
+body {
+    font-family: 'Bree Serif', serif;
+    background-image: url('../images/pokemon_home.jpg');
+    background-repeat: none;;
+    background-size: cover;
+    text-align: center;
+    margin-top: 270px;
+    margin-left: 150px;
+            
+}
+

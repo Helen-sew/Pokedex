@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+
+    <h1>Pokemon Edit Page</h1>
+		<form action="/pokemons/<%= index %>?_method=PUT" method="POST">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" value="<%=pokemon.name%>" />
+			<label for="image-url">Image</label>
+        	<input type="text" name="img" id="img" value="<%=pokemon.img%>" />
+			
+			<button type="submit">Edit</button>
+		</form>
+
+
+    
+</body>
+</html>
+

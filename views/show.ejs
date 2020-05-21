@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+	<body>
+        <nav class="nav">
+            <a class="nav-link active" href="/"><button class=" btn btn-primary" type="submit">Home</button></a>
+            <a class="nav-link" href="/pokemons"><button class=" btn btn-primary" type="submit">All Pokemons</button></a>
+        </nav>
+
+
+        <h1>Pokemo Page</h1>
+
+        <br>
+        <a href="/pokemons">Back</a>
+        <br>
+        <br>
+        
+    
+        <h5><%=`Name : ${pokemon.name} `%></h5> 
+        <img src="<%= pokemon.img %>">
+        <p><%=`Abilities : ${pokemon.misc.abilities.normal}` %></p> 
+        <p><%=`Type : ${pokemon.type}` %></p>
+        <p><%=`Stats_hp : ${pokemon.stats.hp}` %></p>
+        <p><%=`Stats_attack : ${pokemon.stats.attack}` %></p>
+        <p><%=`Stats_defense : ${pokemon.stats.defense}` %></p>
+        <p><%=`Stats_spattack : ${pokemon.stats.spattack}` %></p>
+        <p><%=`Stats_spdefense : ${pokemon.stats.spdefense}` %></p>
+        <p><%=`Stats_speed : ${pokemon.stats.speed}` %></p>
+
+		
+    
+
+	</body>
+</html>
