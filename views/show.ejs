@@ -18,19 +18,26 @@
         <br>
         <br>
         
-    
+        <!-- name -->
         <h5><%=`Name : ${pokemon.name} `%></h5> 
-        <img src="<%= pokemon.img %>">
-        <p><%=`Abilities : ${pokemon.misc.abilities.normal}` %></p> 
-        <p><%=`Type : ${pokemon.type}` %></p>
-        <p><%=`Stats_hp : ${pokemon.stats.hp}` %></p>
-        <p><%=`Stats_attack : ${pokemon.stats.attack}` %></p>
-        <p><%=`Stats_defense : ${pokemon.stats.defense}` %></p>
-        <p><%=`Stats_spattack : ${pokemon.stats.spattack}` %></p>
-        <p><%=`Stats_spdefense : ${pokemon.stats.spdefense}` %></p>
-        <p><%=`Stats_speed : ${pokemon.stats.speed}` %></p>
+        <!-- image  -->
+        <img src="<%= pokemon.img%>" style="max-width: 300px;">
+        
+    
+        <!-- type -->
+        <p>
+            <% pokemon.type.forEach((type) => { %>
+            <%=`Type: ${type}` %></br>
+            <%})%>
+        </p>
 
-		
+        <!-- stats  -->
+        <p>
+            <% for(let stat in pokemon.stats) { %>
+            <%= stat %> : <%= pokemon.stats[stat] %></br>
+           <% } %>
+        
+        </p>
     
 
 	</body>

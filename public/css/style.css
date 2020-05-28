@@ -1,10 +1,31 @@
 body {
     
-    font-family: 'Black Ops One', cursive;   
-    text-align: center; 
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
     
+     
+
 }
 
+.heading {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+   
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
+
+.box {
+    width : 12rem;
+}
 
 h1 {
     text-align: center;

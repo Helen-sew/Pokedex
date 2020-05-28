@@ -1,30 +1,55 @@
+//database
 const pokemon = require('./models/pokemon.js');
 
 //Home  
-const homePage = (req, res) => {
+const home = (req, res) => {
     res.render('home.ejs');
 };
 
 //Index 
-const indexPage = (req, res)=> {
+const index = (req, res)=> {
     res.render('index.ejs', { pokemon : pokemon });
 };
 
 //New 
-const newPage = (req, res) => {
+const makeNew = (req, res) => {
     res.render('new.ejs');
 };
 
 
 //Show 
-const showPage = (req, res) => {
-    res.render('show.ejs', { pokemon: pokemon[req.params.index] });
+const show = (req, res) => {
+    res.render('show.ejs', { 
+        //send the specific pokemon data into the show.ejs page under the variable 'pokemon'
+        pokemon: pokemon[req.params.index],
+        //send the index of the pokemon into the show.ejs page under the varibale 'index'
+        index: req.params.index   
+    });
+
 };
 
-//Post/create
-const postPage = (req, res) => {
-    pokemon.push(req.body);
+//Create
+const create = (req, res) => {
     console.log(req.body);
+    //create newPokemon object to match the data structure of the model 
+    let newPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type.split(','),
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense:  req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed 
+        }   
+
+    };
+    console.log(newPokemon);
+    //push the newPokemon object into the database 
+    pokemon.push(newPokemon);
+    //redirect to the index page 
     res.redirect('/pokemons');
 };
 
@@ -36,37 +61,60 @@ const postPage = (req, res) => {
 
 
 //Delete 
-const deletePage = (req, res) => {
+const deletePokemon = (req, res) => {
+    // splices the pokemon from the 'database' based on its array index
     pokemon.splice(req.params.index,1);
+    // redirects to index page
     res.redirect('/pokemons');
 };
 
-//Put/replace  
-const replacePage = (req, res)=> {
-    pokemon[req.params.index] = req.body;
+//Update
+const update = (req, res)=> {
     console.log(req.body);
-    res.redirect('/pokemons');
+    // creates editPokemon object to match the data structure of the model
+    let editPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type.split(','),
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed
+        }
+    };
+    
+    // finds the pokemon we're editing by the index number, then sets it equal to the editPokemon object
+    pokemon[req.params.index] = editPokemon;
+    res.redirect('/pokemons/' + req.params.index); // /pokemons/ - redirect to index page 
+    // if with + req.params.index, redirect to /pokemons/index (show)
 };
 
 //Edit 
-const editPage = (req, res) => {
+const edit = (req, res) => {
     res.render(
-        'edit.ejs', //render views/edit.ejs
-        { //pass in an object that contains
-            pokemon: pokemon[req.params.index], //the fruit object
-            index: req.params.index //... and its index in the array
+        'edit.ejs', 
+        { //send the specific pokemon data into the show.ejs page under the variable 'pokemon' 
+            pokemon: pokemon[req.params.index], 
+          //send the index of the pokemon into the show.ejs page under varible 'index'
+            index: req.params.index 
         }
     );
 };
 
+
+
+
 module.exports = {
-    homePage,
-    indexPage,
-    newPage,
-    showPage, 
-    postPage,
-    deletePage,
-    replacePage,
-    editPage 
+    home,
+    index,
+    makeNew,
+    show, 
+    create,
+    deletePokemon,
+    update,
+    edit
 };
 

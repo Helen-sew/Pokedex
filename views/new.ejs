@@ -14,32 +14,62 @@
 
 	<h1>Create New Pokemon</h1>
   
-	      <div >
-		      <div>
-            <form action="/pokemons" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name"/>
-        <label for="image-url">Image</label>
-        <input type="text" name="img" id="img" />
-        <label for="text" name="miscAbilities" id="miscAbilities">Abilities</label>
-        <input type="text" name="misc.abilities.normal" id="misc.abilities.normal" />   
-        <label for="text" name="statshp" id="statshp">Stats hp</label>
-        <input type="text" name="stats.hp" id="stats.hp" />
-        <label for="text" name="statsAttack" id="statsAttack">Stats attack</label>
-        <input type="text" name="stats.attack" id="stats.attack" />
-        <label for="text" name="statsDefense" id="statsDefense">Stats defense</label>
-        <input type="text" name="stats.defense" id="stats.defense" />
-        <label for="text" name="statsSpattack" id="statsSpattack">Stats spattack</label>
-        <input type="text" name="stats.spattack" id="stats.spattack" />
-        <label for="text" name="statsSpdefense" id="statsSpdefense">Stats spdefense</label>
-        <input type="text" name="stats.spdefense" id="stats.spdefense" />
-        <label for="text" name="statsSpeed" id="statsSpeed">Stats speed</label>
-        <input type="text" name="stats.speed" id="stats.speed" />
+	    
+	  
+    <form action="/pokemons" method="POST">
+        <div class="form-group">    
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name"/>
+        </div>
 
+        <div class="form-group">
+            <label for="img">Image</label>
+            <input type="text" name="img" id="img" /> </br> 
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" name="type" id="type"/>
+        </div>
+
+        <div class="form-group">
+            <label for="hp">Hp</label> 
+            <input type="text" name="hp" id="hp" /> 
+        </div>
+
+
+        <div class="form-group">
+            <label for="attack">Attack</label>
+            <input type="text" name="attack" id="attack" />
+        </div>
+
+        <div class="form-group">
+             <label for="defense">Defense</label> 
+             <input type="text" name="defense" id="defense" />
+        </div>
+
+        <div class="form-group">
+            <label for="spattack">Spattack</label> 
+            <input type="text" name="spattack" id="spattack" />
+        </div>
+
+        <div class="form-group">
+            <label for="spdefense">Spdefense</label> 
+            <input type="text" name="spdefense" id="spdefense" />
+        </div>
+
+        <div class="form-group">
+            <label for="speed">Speed</label> 
+            <input type="text" name="speed" id="speed" />
+        </div>
+
+    </br>
         <input type="submit" value="Create Pokemon">
+
       </form>
-      </div>
-      </div>
+    </div>
+    
+      
 
     
 </body>

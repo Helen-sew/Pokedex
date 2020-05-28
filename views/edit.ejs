@@ -6,13 +6,65 @@
 </head>
 <body>
 
+
+	<nav class="nav">
+		<a class="nav-link active" href="/"><button class=" btn btn-primary" type="submit">Home</button></a>
+		<a class="nav-link" href="/pokemons/"><button class=" btn btn-primary" type="submit">All Pokemons</button></a>
+	</nav>
+
+
+
     <h1>Pokemon Edit Page</h1>
 		<form action="/pokemons/<%= index %>?_method=PUT" method="POST">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name" value="<%=pokemon.name%>" />
-			<label for="image-url">Image</label>
-        	<input type="text" name="img" id="img" value="<%=pokemon.img%>" />
-			
+			<div class="form-group">    
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name"/>
+            </div>
+    
+            <div class="form-group">
+                <label for="img">Image</label>
+                <input type="text" name="img" id="img" /> </br> 
+            </div>
+    
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <input type="text" name="type" id="type"/>
+            </div>
+    
+            <div class="form-group">
+                <label for="hp">Hp</label> 
+                <input type="text" name="hp" id="hp" /> 
+            </div>
+    
+    
+            <div class="form-group">
+                <label for="attack">Attack</label>
+                <input type="text" name="attack" id="attack" />
+            </div>
+    
+            <div class="form-group">
+                 <label for="defense">Defense</label> 
+                 <input type="text" name="defense" id="defense" />
+            </div>
+    
+            <div class="form-group">
+                <label for="spattack">Spattack</label> 
+                <input type="text" name="spattack" id="spattack" />
+            </div>
+    
+            <div class="form-group">
+                <label for="spdefense">Spdefense</label> 
+                <input type="text" name="spdefense" id="spdefense" />
+            </div>
+    
+            <div class="form-group">
+                <label for="speed">Speed</label> 
+                <input type="text" name="speed" id="speed" />
+            </div>
+    
+        </br>
+
+
 			<button type="submit">Edit</button>
 		</form>
 
